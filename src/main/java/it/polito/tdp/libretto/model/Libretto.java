@@ -63,17 +63,17 @@ public class Libretto {
 		return null;
 	}
 	
-	public List miglioraLibretto(Libretto l) {	
-		List <Voto> depurati = new ArrayList<Voto>();;
-		for (Voto v: l.getVoti()) {
-			Voto v2 = v;
-			if ((v2.getPunti()>=18 && v2.getPunti()<24) || v2.getPunti()==29) {
-				v2.setPunti(v2.getPunti()+1);
-				depurati.add(v2);
-			}
-			else if (v2.getPunti()>=24 && v2.getPunti()<29) {
-				v2.setPunti(v2.getPunti()+1);
-				depurati.add(v2);
+	public Libretto miglioraLibretto() {	
+		Libretto depurati = new Libretto();
+		depurati.voti = new ArrayList<>();
+		for (Voto v: this.voti) {
+			depurati.voti.add(v);
+		}
+		for (Voto v: depurati.voti) {
+			if (v.getPunti()>=18 && v.getPunti()<24)
+				v.setPunti(v.getPunti()+2);
+			if (v.getPunti()>=24 && v.getPunti()<29) {
+				v.setPunti(v.getPunti()+1);
 			}
 		}
 		return depurati;

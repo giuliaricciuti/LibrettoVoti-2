@@ -33,8 +33,8 @@ public class TestLibretto {
 			System.out.println (v3.toString());
 		}
 		
-		dep.miglioraLibretto(lib);
-		for (Voto v4 : dep.getVoti()) {
+		lib.miglioraLibretto();
+		for (Voto v4 : lib.getVoti()) {
 			System.out.println (v4.toString());
 		}
 	}

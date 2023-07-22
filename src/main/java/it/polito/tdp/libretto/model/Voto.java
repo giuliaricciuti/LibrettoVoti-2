@@ -55,4 +55,5 @@ public class Voto {
 			return true;
 		return false;
 	}
+
 }
